@@ -1,0 +1,70 @@
+
+:root{
+    --before_component_opacity:1.0;
+    --before_component_background:transparent;
+}
+
+@property --before_component_background{
+    syntax: "<bg-layer>";
+    inherits: false;
+    initial-value:transparent;
+}
+
+
+.file_upload_component{
+    position: relative;
+    left: 0%;
+    top: 0%;
+    border-radius: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0rem 0rem 1rem 0 #00000075;
+    margin-bottom: 2.5rem;
+}
+
+.file_upload_component::before{
+    opacity: var(--before_component_opacity);
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background:var(--before_component_background);
+    z-index: -1;
+    backdrop-filter: blur(0.15rem);
+    transition: all 0.5s ease;
+}
+
+.file_upload_component:hover{
+    --before_component_opacity:0.5;
+    --before_component_background:#d0fe63;
+}
+
+#title_box{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#file_details{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    height: fit-content;
+    width: 80%;
+    border: 0.2rem solid #000000;
+}
+
+#input_button{
+    position: relative;
+    left: 10%;
+    margin: 0.3rem;
+    font-size: 1.5rem;
+}
+
+#upload_button{
+    width: 60%;
+    height: 4rem;
+    margin: 0.7rem;
+}
